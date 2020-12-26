@@ -1,14 +1,15 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import { BrowserRouter } from "react-router-dom";
-import { Root } from "../pages";
+import { Router } from "react-router-dom";
+import { Root } from "@src/pages";
+import history from "./history";
 
 const App: React.FC = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <Switch>
       <Route exact path="/" component={Root} />
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 export default App;
