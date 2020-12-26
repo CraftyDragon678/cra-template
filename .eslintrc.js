@@ -34,14 +34,29 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-use-before-define': 'off',
     'no-nested-ternary': 'off',
-    "import/no-extraneous-dependencies": [
+    'import/no-extraneous-dependencies': [
       'error',
       { devDependencies: ['**/*.stories.tsx'] },
     ],
+    'import/order': [
+      'error',
+      {
+        pathGroups: [{
+          pattern: '@src/**',
+          group: 'internal',
+        }]
+      }
+    ]
   },
   settings: {
     'import/resolver': {
       node: {
+        extensions: ['.ts', '.tsx'],
+      },
+      alias: {
+        map: [
+          ['@src', './src'],
+        ],
         extensions: ['.ts', '.tsx'],
       },
     },
